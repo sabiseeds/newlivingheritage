@@ -6,10 +6,17 @@ class GeminiService {
     if (!process.env.GEMINI_API_KEY) {
       throw new Error('GEMINI_API_KEY is not set in environment variables');
     }
+
+    // Initialize the Gemini client with API key from environment
+    process.env.GOOGLE_GENAI_API_KEY = process.env.GEMINI_API_KEY;
+
     this.ai = new GoogleGenAI({
       apiKey: process.env.GEMINI_API_KEY
     });
+
     this.fileSearchStores = new Map(); // Store references to file search stores
+
+    console.log('GeminiService initialized successfully');
   }
 
   /**
