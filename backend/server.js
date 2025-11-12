@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs/promises';
 import geminiRoutes from './routes/gemini.js';
+import hrRoutes from './routes/hr.js';
 
 dotenv.config();
 
@@ -41,6 +42,7 @@ export const upload = multer({
 
 // Routes
 app.use('/api/gemini', geminiRoutes);
+app.use('/api/hr', hrRoutes);
 
 // Health check
 app.get('/health', (req, res) => {

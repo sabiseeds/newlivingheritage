@@ -1,15 +1,33 @@
-# Gemini Software Proposal Generator
+# Gemini AI Platform
 
-A modern web application that leverages Google's Gemini AI with File Search (RAG) to generate comprehensive software proposals based on requirement descriptions and your uploaded knowledge base documents.
+A comprehensive AI-powered platform leveraging Google's Gemini AI with File Search (RAG) for business operations including software proposal generation and HR recruitment management.
+
+## Modules
+
+### 1. Software Proposal Generator
+Generate comprehensive software proposals based on requirement descriptions and your uploaded knowledge base documents.
+
+### 2. HR & Recruitment System
+AI-powered recruitment and onboarding management system with CV parsing, job offer generation, and onboarding workflows.
 
 ## Features
 
+### Software Proposals
 - **File Search Integration**: Upload and index documents using Gemini's File Search API for semantic search
 - **RAG (Retrieval Augmented Generation)**: Generate proposals grounded in your knowledge base with citations
 - **Multiple File Formats**: Supports PDF, DOCX, TXT, MD, and many other document formats
 - **File Search Store Management**: Create and manage multiple knowledge base stores
 - **Metadata Filtering**: Tag documents with metadata and filter searches
 - **Citation Display**: See which documents were referenced in the generated proposal
+
+### HR & Recruitment
+- **AI-Powered CV Parsing**: Automatically extract structured information from PDF resumes including personal details, work experience, education, skills, and certifications
+- **Profile Photo Extraction**: Extract and process profile photos from CVs or upload separately
+- **Candidate Management**: Track candidates through different stages (applied, screening, interviewing, offer sent, hired)
+- **Job Offer Generation**: Generate professional, customized job offer letters using AI based on candidate profile and job details
+- **Onboarding Workflow**: Create comprehensive onboarding checklists with pre-boarding, first day, first week, and first month tasks
+- **Document Management**: Automatically identify required HR documents (employment contract, NDA, benefits forms, etc.)
+- **Task Tracking**: Monitor onboarding progress with interactive checklists and completion tracking
 - **Modern UI**: Clean, responsive interface built with React
 
 ## Tech Stack
@@ -26,6 +44,9 @@ A modern web application that leverages Google's Gemini AI with File Search (RAG
 - Node.js + Express
 - Google Generative AI SDK (@google/genai)
 - Multer (file upload handling)
+- pdf-parse & pdf-lib (PDF processing)
+- Sharp (image processing)
+- UUID (unique ID generation)
 
 ## Prerequisites
 
