@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, UserCheck, FileText } from 'lucide-react';
+import { Sparkles, UserCheck, FileText, Image } from 'lucide-react';
 import StoreManager from './components/StoreManager';
 import FileUpload from './components/FileUpload';
 import ProposalGenerator from './components/ProposalGenerator';
 import HRApp from './HRApp';
+import DocumentImageApp from './DocumentImageApp';
 import api from './api';
 
 function App() {
   const [selectedStore, setSelectedStore] = useState(null);
   const [apiConfigured, setApiConfigured] = useState(false);
   const [checking, setChecking] = useState(true);
-  const [activeModule, setActiveModule] = useState('proposals'); // 'proposals' or 'hr'
+  const [activeModule, setActiveModule] = useState('proposals'); // 'proposals', 'hr', or 'document-image'
 
   useEffect(() => {
     checkApiHealth();
@@ -67,6 +68,16 @@ function App() {
       <>
         <ModuleNavigation activeModule={activeModule} setActiveModule={setActiveModule} />
         <HRApp />
+      </>
+    );
+  }
+
+  // If Document Image module is selected, show DocumentImageApp
+  if (activeModule === 'document-image') {
+    return (
+      <>
+        <ModuleNavigation activeModule={activeModule} setActiveModule={setActiveModule} />
+        <DocumentImageApp />
       </>
     );
   }
@@ -196,6 +207,26 @@ function ModuleNavigation({ activeModule, setActiveModule }) {
           >
             <UserCheck size={18} />
             HR & Recruitment
+          </button>
+          <button
+            onClick={() => setActiveModule('document-image')}
+            style={{
+              padding: '12px 24px',
+              border: 'none',
+              borderBottom: activeModule === 'document-image' ? '3px solid var(--primary)' : '3px solid transparent',
+              background: 'transparent',
+              color: activeModule === 'document-image' ? 'var(--primary)' : 'var(--text-secondary)',
+              fontWeight: 600,
+              fontSize: '15px',
+              cursor: 'pointer',
+              transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            <Image size={18} />
+            Document Images
           </button>
         </nav>
       </div>

@@ -10,6 +10,9 @@ Generate comprehensive software proposals based on requirement descriptions and 
 ### 2. HR & Recruitment System
 AI-powered recruitment and onboarding management system with CV parsing, job offer generation, and onboarding workflows.
 
+### 3. Document Image Generator
+Automatically enhance your documents by analyzing content and inserting AI-generated images at appropriate locations. See [DOCUMENT_IMAGE_GENERATOR.md](DOCUMENT_IMAGE_GENERATOR.md) for detailed documentation.
+
 ## Features
 
 ### Software Proposals
@@ -30,6 +33,14 @@ AI-powered recruitment and onboarding management system with CV parsing, job off
 - **Task Tracking**: Monitor onboarding progress with interactive checklists and completion tracking
 - **Modern UI**: Clean, responsive interface built with React
 
+### Document Image Generator
+- **Intelligent Content Analysis**: AI analyzes each paragraph to identify visual enhancement opportunities
+- **Automatic Image Generation**: Creates contextually relevant images using Gemini Imagen 3
+- **Smart Image Placement**: Automatically inserts images at appropriate locations with proper formatting
+- **Preview Mode**: Analyze documents first to see which paragraphs will get images
+- **Professional Formatting**: Images are inserted with captions and optimized sizing
+- **DOCX Support**: Process Microsoft Word documents with full formatting preservation
+
 ## Tech Stack
 
 ### Frontend
@@ -47,6 +58,9 @@ AI-powered recruitment and onboarding management system with CV parsing, job off
 - pdf-parse & pdf-lib (PDF processing)
 - Sharp (image processing)
 - UUID (unique ID generation)
+- docx (Word document manipulation)
+- mammoth (DOCX parsing)
+- axios (HTTP client for image downloads)
 
 ## Prerequisites
 
